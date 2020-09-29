@@ -1,0 +1,74 @@
+[h1]North Korea Mode[/h1]
+This mod re-enables 'North Korea Mode' in Crusader Kings III
+no other changes are made in this mod.
+
+[h1]What is 'North Korea Mode?'[h1]
+'North Korea Mode' in crusader kings is the colloquial term for playing
+without having, or having few vassals. Doing so normally would
+impact your levies and gold per month as you are over your holding
+limit. This mod re-enables it as the game was released with this
+mechanic, and furthermore, this is how it works in Crusader Kings II
+as well.
+
+[h1]What does this mod change in my game files?[/h1]
+[b]This mod disables the following function call(s):[/b]
+[code]  building_disable_if_vastly_over_domain_limit_trigger = yes [/code]
+[b]To:[/b]
+[code]  #building_disable_if_vastly_over_domain_limit_trigger = yes [/code]
+
+[b]This mod changes the following definition(s):[/b]
+[code]  NDomain = {
+	...
+	ABOVE_LIMIT_MAX_LEVY_PENALTY = 1			# How much levies can be reduced at most
+	...
+	ABOVE_LIMIT_MAX_TAX_INCOME_PENALTY = 1		# How much tax income from domain can be reduced at most
+	...
+} [/code]
+[b]To:[/b]
+[code]  NDomain = {
+	...
+	ABOVE_LIMIT_MAX_LEVY_PENALTY = 0.9			# How much levies can be reduced at most
+	...
+	ABOVE_LIMIT_MAX_TAX_INCOME_PENALTY = 0.9		# How much tax income from domain can be reduced at most
+	...
+}[/code]
+
+This mod does so by modifying the following files:
+[table]
+    [tr]
+        [th]File Name[/th]
+        [th]Compatible with other mods?[/th]
+    [/tr]
+    [tr]
+        [td][code][noparse]common/buildings/00_city_buildings.txt[/noparse][/code][/td]
+        [td]✘[/td]
+    [/tr]
+    [tr]
+		[td][code][noparse]common/buildings/00_common_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+    [/tr]
+    [tr]
+		[td][code][noparse]common/buildings/00_duchy_capital_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+	[/tr]
+	[tr]
+		[td][code][noparse]common/buildings/00_special_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+	[/tr]
+	[tr]
+		[td][code][noparse]common/buildings/00_temple_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+	[/tr]
+	[tr]
+		[td][code][noparse]common/buildings/00_terrair_specific_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+	[/tr]
+	[tr]
+		[td][code][noparse]common/buildings/00_tribal_buildings.txt[/noparse][/code][/td]
+		[td]✘[/td]
+	[/tr]
+	[tr]
+		[td][code][noparse]common/defines/11_defines.txt[/noparse][/code][/td]
+		[td]✔[/td]
+    [/tr]
+[/table]
